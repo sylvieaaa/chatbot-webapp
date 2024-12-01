@@ -40,7 +40,7 @@ services:
     build:
       context: ./frontend/chatbot-frontend # Points to the frontend directory
       dockerfile: Dockerfile
-    container_name: angular
+    container_name: angular-frontend
     ports:
       - "4200:4200"
 

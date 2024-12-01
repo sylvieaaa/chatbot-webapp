@@ -30,7 +30,8 @@ GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'localhost']
+# For test environemnt only
+ALLOWED_HOSTS = ['*']
 CORS_ALLOWED_ORIGINS = ["http://localhost:4200"]
 
 # Application definition
