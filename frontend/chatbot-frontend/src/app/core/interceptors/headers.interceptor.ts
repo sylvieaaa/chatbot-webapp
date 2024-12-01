@@ -13,7 +13,6 @@ export const headersInterceptor: HttpInterceptorFn = (req, next) => {
     return next(req);
   }
 
-  console.log('here');
   // Clone the request to add the authentication header.
 
   const authReq = accessToken

@@ -37,7 +37,6 @@ export class ChatComponent {
 
   retrieveChatHistory() {
     this.chatService.getChatHistory().subscribe((response: ChatMessage[]) => {
-      console.log('chat> ', response);
       this.chatHistory = response.map((item: ChatMessage) => ({
         user_message: item.user_message,
         chatbot_response: item.chatbot_response,
@@ -62,9 +61,10 @@ export class ChatComponent {
         // this.userMessage = '';
       },
       error: (error: HttpErrorResponse) => {
-        console.log('error> ', error);
+        console.log('error> ', error.error);
 
         this.toastr.error('An unknown error occurred.', 'Login Failed');
+        this.isLoading = false;
       },
     });
   }

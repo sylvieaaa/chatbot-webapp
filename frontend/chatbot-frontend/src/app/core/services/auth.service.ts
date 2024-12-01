@@ -17,7 +17,6 @@ export class AuthService {
   login(payload: any): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(`${this.apiUrl}/login/`, payload).pipe(
       tap((response: LoginResponse) => {
-        console.log('RESP> ', response);
         localStorage.setItem(ACCESS_TOKEN, response.access);
         localStorage.setItem(REFRESH_TOKEN, response.refresh);
       })

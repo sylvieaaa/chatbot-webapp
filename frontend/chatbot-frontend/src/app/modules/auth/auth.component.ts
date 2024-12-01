@@ -44,9 +44,7 @@ export class AuthComponent {
   router = inject(Router);
 
   ngOnInit() {
-    console.log('is>> ', this.authService.isAuthenticatedUser());
     if (this.authService.isAuthenticatedUser()) {
-      console.log('here');
       // Redirect to chat page if already logged in
       this.router.navigate(['chat']);
     }
@@ -72,7 +70,6 @@ export class AuthComponent {
           this.router.navigate(['/chat']);
         },
         error: (error: HttpErrorResponse) => {
-          console.log('error> ', error);
           if (error.error.detail) {
             this.toastr.error(error.error.detail, 'Login Failed');
           } else {
@@ -97,7 +94,6 @@ export class AuthComponent {
         this.isLoginMode = true;
       },
       error: (error) => {
-        console.log('error> ', error);
         this.errorMessage = 'Registration failed. Please try again.';
         this.toastr.error(error.error.detail, 'Registration Failed');
       },
