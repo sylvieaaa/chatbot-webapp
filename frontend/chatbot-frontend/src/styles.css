@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f8fc;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.toast-container .ngx-toastr {
+  border-radius: 5px !important; /* Rounded corners */
+  padding: 10px 20px !important; /* Padding around the text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better visibility */
+}
+
+.toast-title {
+  margin-bottom: 5px;
+}
+.toast-message {
+  font-size: 14px; /* Optional: adjust font size */
+}
+/* Adjust success toasts */
+.toast-success {
+  background-color: #28a745 !important; /* Success color */
+  color: #ffffff !important; /* Text color */
+}
+
+/* Adjust error toasts */
+.toast-error {
+  background-color: #dc3545 !important; /* Error color */
+  color: #ffffff !important; /* Text color */
+}
+
+/* Override ngx-toastr styles if needed */
+.toast-top-right {
+  top: 12px !important;
+  right: 12px !important;
+  position: fixed !important;
+  z-index: 9999; /* Ensure it's above other elements */
+}
+
+.toast-container {
+  pointer-events: auto; /* Enable clicks if necessary */
+}

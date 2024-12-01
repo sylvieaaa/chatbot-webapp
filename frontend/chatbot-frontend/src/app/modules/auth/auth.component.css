@@ -1,0 +1,148 @@
+/* Container */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* Card */
+.auth-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 32px;
+  width: 300px;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.logo {
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2b3a67;
+}
+
+h2 {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+input[type="username"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px 0px 10px 0px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  text-indent: 10px;
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  margin-right: 8px;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.forgot-password {
+  font-size: 12px;
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+/* Buttons */
+.btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.primary-btn:disabled {
+  background-color: #d3d3d3; /* Greyed out background */
+  color: #a0a0a0; /* Greyed out text */
+  cursor: not-allowed; /* Indicates that the button is not clickable */
+}
+
+.primary-btn {
+  background-color: #2b3a67;
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: #006bb3;
+  transform: scale(1.05);
+}
+
+.primary-btn:active {
+  background-color: #004085;
+  transform: scale(0.98);
+}
+
+/* Styling for Toggle Link Section */
+.signup-link {
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.signup-link a {
+  color: #1a73e8;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+.signup-link button {
+  background: none;
+  border: none;
+  color: #1a73e8;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.signup-link button:hover {
+  color: #006bb3;
+}
+
+.signup-link button:focus {
+  outline: none;
+}
