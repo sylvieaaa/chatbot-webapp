@@ -1,1 +1,1 @@
-docker run -d -p 4201:4200 angular-docker
+docker run -d -p 4201:4200 angular-frontend

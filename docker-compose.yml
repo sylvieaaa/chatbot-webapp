@@ -15,14 +15,6 @@ services:
     volumes:
       - mysql-data:/var/lib/mysql # Persist data between container restarts
 
-  frontend:
-    build:
-      context: ./frontend # Points to the frontend directory
-      dockerfile: Dockerfile
-    container_name: angular
-    ports:
-      - "4200:4200"
-
   # Django backend service
   backend:
     build:
@@ -43,6 +35,14 @@ services:
       - mysql # Ensure MySQL starts first
     volumes:
       - ./backend:/app # Mount your backend code to the container
+
+  frontend:
+    build:
+      context: ./frontend/chatbot-frontend # Points to the frontend directory
+      dockerfile: Dockerfile
+    container_name: angular
+    ports:
+      - "4200:4200"
 
 volumes:
   mysql-data:

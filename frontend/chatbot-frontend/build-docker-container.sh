@@ -1,1 +1,1 @@
-docker build -t angular-docker .
+docker build -t angular-frontend .
