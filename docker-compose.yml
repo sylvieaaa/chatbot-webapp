@@ -1,0 +1,48 @@
+services:
+  # MySQL database service
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    env_file:
+      - ./backend/.env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD} # Set your root password here
+      MYSQL_DATABASE: chatbot_db # The database to create on startup
+      MYSQL_USER: ${MYSQL_USER} # Optional: Username for connecting
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD} # Optional: Password for the above user
+    ports:
+      - "3306:3306" # Expose MySQL port to your local machine
+    volumes:
+      - mysql-data:/var/lib/mysql # Persist data between container restarts
+
+  frontend:
+    build:
+      context: ./frontend # Points to the frontend directory
+      dockerfile: Dockerfile
+    container_name: angular
+    ports:
+      - "4200:4200"
+
+  # Django backend service
+  backend:
+    build:
+      context: ./backend # Make sure this path points to the folder containing your Dockerfile
+    container_name: django-backend
+    env_file:
+      - ./backend/.env
+    environment:
+      - DEBUG=True
+      - DJANGO_DB_HOST=mysql # Database hostname (referencing MySQL service)
+      - DJANGO_DB_PORT=3306 # Database port
+      - DJANGO_DB_NAME=chatbot_db # Database name (the one set in MySQL)
+      - DJANGO_DB_USER=${DJANGO_DB_USER} # Database username
+      - DJANGO_DB_PASSWORD=${DJANGO_DB_PASSWORD} # Database password
+    ports:
+      - "8000:8000" # Expose Django port to local machine
+    depends_on:
+      - mysql # Ensure MySQL starts first
+    volumes:
+      - ./backend:/app # Mount your backend code to the container
+
+volumes:
+  mysql-data:
