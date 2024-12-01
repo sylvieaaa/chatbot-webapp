@@ -5,6 +5,7 @@ from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from chat.serializers.serializers import ChatHistorySerializer
 from chat.models import ChatHistory
+from .chat_service import ChatService
 
 
 class ChatAPIView(generics.CreateAPIView):
